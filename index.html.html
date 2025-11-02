@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUMAIR - Excel, VBA & FP&A Automation Specialist | Financial Automation Expert</title>
+    <meta name="description" content="Excel, VBA & FP&A Automation Specialist with 5+ years experience. I build financial automation systems, dashboards, and reporting solutions that save 40+ hours monthly.">
+    <meta name="author" content="SUMAIR ANSARI">
+    <meta name="keywords" content="Excel automation, VBA developer, FP&A specialist, financial dashboards, Excel consultant, data automation, Fiverr Pro">
+    
+    <meta property="og:title" content="SUMAIR - Excel, VBA & FP&A Automation Specialist">
+    <meta property="og:description" content="Financial automation systems, dashboards, and reporting solutions. 50+ projects delivered across 8+ industries.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@lovable_dev">
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: 158 100% 50%;
+            --primary-foreground: 0 0% 100%;
+            --background: 220 40% 8%;
+            --foreground: 0 0% 100%;
+            --muted: 220 20% 20%;
+            --muted-foreground: 0 0% 70%;
+            --border: 220 20% 25%;
+            --card: 220 35% 12%;
+            --radius: 0.5rem;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid hsl(var(--border));
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, hsl(var(--primary)), hsl(200 100% 60%));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: hsl(var(--foreground));
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: hsl(var(--primary));
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: hsl(var(--foreground));
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Glass Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, hsl(var(--primary) / 0.15), transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            bottom: 20%;
+            left: 10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, hsl(200 100% 60% / 0.15), transparent 70%);
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: float 6s ease-in-out infinite reverse;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, hsl(var(--primary)), hsl(200 100% 60%));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 40px hsl(var(--primary) / 0.7);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: hsl(var(--foreground));
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: hsl(var(--primary));
+            display: block;
+        }
+
+        .stat-label {
+            color: hsl(var(--muted-foreground));
+            font-size: 0.875rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.375rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid hsl(var(--primary) / 0.5);
+            color: hsl(var(--primary));
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: hsl(var(--muted-foreground));
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Service Cards */
+        .service-card {
+            padding: 2rem;
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: hsl(var(--muted-foreground));
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        /* Portfolio */
+        .project-card {
+            padding: 1.5rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, hsl(var(--primary)), hsl(200 100% 60%));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tools {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tool-badge {
+            padding: 0.25rem 0.75rem;
+            background: hsl(var(--primary) / 0.2);
+            color: hsl(var(--primary));
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            padding: 2rem;
+        }
+
+        .stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .star {
+            color: hsl(var(--primary));
+            font-size: 1.25rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid hsl(var(--border));
+        }
+
+        .author-avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: hsl(var(--primary) / 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .author-info p {
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+        }
+
+        /* Pricing */
+        .pricing-card {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .pricing-card.popular {
+            border: 2px solid hsl(var(--primary));
+            box-shadow: 0 0 40px hsl(var(--primary) / 0.3);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            padding: 0.375rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: hsl(var(--primary));
+            margin: 1rem 0;
+        }
+
+        .features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+        }
+
+        .check-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            background: hsl(var(--primary) / 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: hsl(var(--primary));
+            flex-shrink: 0;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            color: hsl(var(--foreground));
+            font-family: inherit;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: hsl(var(--primary));
+            box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: hsl(var(--card));
+            border-top: 1px solid hsl(var(--border));
+            padding: 3rem 0 1.5rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: hsl(var(--muted-foreground));
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: hsl(var(--primary));
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: hsl(var(--foreground));
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid hsl(var(--border));
+            color: hsl(var(--muted-foreground));
+            font-size: 0.875rem;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: hsl(var(--foreground));
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 14, 39, 0.95);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid hsl(var(--border));
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">(っ◔◡◔)っ ​ⓈⓊⓂⒶⒾⓇ</div>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>
+                    Excel, VBA - Macros & FP&A Expert<br>
+                    <span class="gradient-text">Automation Specialist</span>
+                </h1>
+                <p>
+                    I build financial automation systems, dashboards, and reporting solutions that save 40+ hours monthly for businesses.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Hire Me</a>
+                    <a href="#portfolio" class="btn btn-secondary">View Projects</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">500+</span>
+                        <span class="stat-label">Projects Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">50+</span>
+                        <span class="stat-label">Industries Served</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge">About Me</span>
+                <h2>Financial Automation <span class="gradient-text">Expert</span></h2>
+                <p>Transforming complex financial processes into streamlined, automated systems</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="glass-card" style="padding: 2rem;">
+                    <div style="display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div style="width: 6rem; height: 6rem; border-radius: 1rem; background: linear-gradient(135deg, hsl(var(--primary) / 0.2), hsl(var(--primary) / 0.05)); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                            👨‍💼
+                        </div>
+                        <div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.25rem;">Sumair</h3>
+                            <p style="color: hsl(var(--primary)); font-weight: 600;">Excel & FP&A Specialist</p>
+                        </div>
+                    </div>
+                    <p style="color: hsl(var(--muted-foreground)); line-height: 1.8; margin-bottom: 1.5rem;">
+                        I help businesses automate financial reporting, budgeting, forecasting, and Excel-based operations with VBA, Dashboards, and FP&A solutions. My expertise lies in transforming manual, time-consuming processes into efficient, automated systems that drive accuracy and productivity.
+                    </p>
+                    <ul style="list-style: none;">
+                        <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <span style="color: hsl(var(--primary));">✓</span>
+                            <span style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">5+ years of hands-on experience in Excel automation</span>
+                        </li>
+                        <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <span style="color: hsl(var(--primary));">✓</span>
+                            <span style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Specialized in FP&A and financial reporting solutions</span>
+                        </li>
+                        <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <span style="color: hsl(var(--primary));">✓</span>
+                            <span style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Delivered 500+ successful automation projects</span>
+                        </li>
+                        <li style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <span style="color: hsl(var(--primary));">✓</span>
+                            <span style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Expert in VBA, Power Query, and dashboard development</span>
+                        </li>
+                        <li style="display: flex; gap: 0.75rem;">
+                            <span style="color: hsl(var(--primary));">✓</span>
+                            <span style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Proven track record of saving clients 40+ hours monthly</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">Core Competencies</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem;">
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">Excel Automation</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">VBA Development</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">Financial Modeling</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">Dashboard Design</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">Power Query</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">FP&A Analysis</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">Data Visualization</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">Google Sheets</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">App Script</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">UserForms</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">Macro Development</span></div>
+                        <div class="glass-card" style="padding: 0.5rem 1rem;"><span style="font-size: 0.875rem; font-weight: 500;">Reporting Systems</span></div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+                            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🎯</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: hsl(var(--primary)); margin-bottom: 0.25rem;">100%</div>
+                            <div style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Client Satisfaction</div>
+                        </div>
+                        <div class="glass-card" style="padding: 1.5rem; text-align: center;">
+                            <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">⚡</div>
+                            <div style="font-size: 1.5rem; font-weight: 700; color: hsl(var(--primary)); margin-bottom: 0.25rem;">Fast</div>
+                            <div style="font-size: 0.875rem; color: hsl(var(--muted-foreground));">Delivery Time</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge">Services</span>
+                <h2>What I <span class="gradient-text">Offer</span></h2>
+                <p>Comprehensive Excel and financial automation solutions tailored to your business needs</p>
+            </div>
+
+            <div class="grid-4">
+                <div class="glass-card service-card">
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(var(--primary) / 0.2), hsl(var(--primary) / 0.05));">💻</div>
+                    <h3>Excel & VBA Automation</h3>
+                    <p>Custom VBA macros and automation scripts to eliminate repetitive tasks and boost productivity.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(200 100% 60% / 0.2), hsl(200 100% 60% / 0.05));">📈</div>
+                    <h3>Financial Planning & Analysis</h3>
+                    <p>Comprehensive FP&A support including budgeting, forecasting, and variance analysis.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(280 100% 60% / 0.2), hsl(280 100% 60% / 0.05));">📊</div>
+                    <h3>Dashboard & KPI Reporting</h3>
+                    <p>Interactive dashboards with real-time KPIs and visual analytics for informed decision-making.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(140 100% 50% / 0.2), hsl(140 100% 50% / 0.05));">🗄️</div>
+                    <h3>Data Cleaning & Power Query</h3>
+                    <p>Automated data cleaning, transformation, and Power Query solutions for large datasets.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(50 100% 60% / 0.2), hsl(50 100% 60% / 0.05));">📑</div>
+                    <h3>Google Sheets Automation</h3>
+                    <p>Google Sheets automation using App Script for seamless cloud-based workflows.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(0 100% 60% / 0.2), hsl(0 100% 60% / 0.05));">⚙️</div>
+                    <h3>Custom Excel UserForms</h3>
+                    <p>Professional UserForms and Add-ins for enhanced user experience and data entry.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(240 100% 60% / 0.2), hsl(240 100% 60% / 0.05));">📉</div>
+                    <h3>Budgeting & Forecasting</h3>
+                    <p>Custom financial templates for budgeting, forecasting, and scenario planning.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(320 100% 60% / 0.2), hsl(320 100% 60% / 0.05));">⚡</div>
+                    <h3>Reporting Automation</h3>
+                    <p>End-to-end reporting automation for SMEs and agencies, saving hours of manual work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge">Portfolio</span>
+                <h2>Featured <span class="gradient-text">Projects</span></h2>
+                <p>Real-world automation solutions delivering measurable results</p>
+            </div>
+
+            <div class="grid-3" id="projectsGrid">
+                <!-- Projects will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge">Testimonials</span>
+                <h2>Client <span class="gradient-text">Success Stories</span></h2>
+                <p>Don't just take my word for it - hear from satisfied clients</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="glass-card testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p style="color: hsl(var(--muted-foreground)); line-height: 1.6; margin-bottom: 1.5rem;">
+                        "Sumair transformed our financial reporting process. What used to take us 3 days now takes 2 hours. The automation is flawless and has saved us countless hours."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💼</div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>CFO, TechStart Inc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p style="color: hsl(var(--muted-foreground)); line-height: 1.6; margin-bottom: 1.5rem;">
+                        "Outstanding VBA work! The dashboard he created gives us real-time insights we never had before. Highly recommend for any financial automation needs."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍💼</div>
+                        <div class="author-info">
+                            <h4>Sarah Williams</h4>
+                            <p>Finance Manager, Global Retail</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p style="color: hsl(var(--muted-foreground)); line-height: 1.6; margin-bottom: 1.5rem;">
+                        "Exceptional attention to detail and delivery speed. The inventory management system has reduced our stockouts by 30%. True professional!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🧑‍💼</div>
+                        <div class="author-info">
+                            <h4>David Rodriguez</h4>
+                            <p>Operations Director, LogiTech</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p style="color: hsl(var(--muted-foreground)); line-height: 1.6; margin-bottom: 1.5rem;">
+                        "Sumair's FP&A expertise is remarkable. The forecasting models he built are now central to our strategic planning. Worth every penny!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍💻</div>
+                        <div class="author-info">
+                            <h4>Emily Thompson</h4>
+                            <p>CEO, FinConsult Group</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p style="color: hsl(var(--muted-foreground)); line-height: 1.6; margin-bottom: 1.5rem;">
+                        "The financial close automation tool is a game-changer. We've cut our month-end process time by 80%. Couldn't be happier with the results."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💻</div>
+                        <div class="author-info">
+                            <h4>James Patterson</h4>
+                            <p>Controller, Manufacturing Co.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p style="color: hsl(var(--muted-foreground)); line-height: 1.6; margin-bottom: 1.5rem;">
+                        "The payroll system Sumair developed is incredibly user-friendly and accurate. It's made our HR team's life so much easier. Highly skilled professional!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍🔧</div>
+                        <div class="author-info">
+                            <h4>Lisa Anderson</h4>
+                            <p>HR Director, Enterprise Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <div class="glass-card" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 1.5rem; border-radius: 9999px;">
+                    <span class="star">★</span>
+                    <span style="font-weight: 600;">4.9/5.0 Average Rating</span>
+                    <span style="color: hsl(var(--muted-foreground));">from 300+ clients</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge">Pricing</span>
+                <h2>Flexible <span class="gradient-text">Packages</span></h2>
+                <p>Choose the package that fits your automation needs</p>
+            </div>
+
+            <div class="grid-3" style="max-width: 1200px; margin: 0 auto;">
+                <div class="glass-card pricing-card">
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(200 100% 60% / 0.2), hsl(200 100% 60% / 0.05)); font-size: 2rem; margin-bottom: 1.5rem;">⚡</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Starter</h3>
+                    <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin-bottom: 1.5rem;">Perfect for small fixes and basic automation</p>
+                    <div class="price">$150</div>
+                    <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">per project</p>
+                    <ul class="features">
+                        <li><span class="check-icon">✓</span> Basic Excel automation</li>
+                        <li><span class="check-icon">✓</span> Simple macro development</li>
+                        <li><span class="check-icon">✓</span> Formula optimization</li>
+                        <li><span class="check-icon">✓</span> Data cleaning</li>
+                        <li><span class="check-icon">✓</span> Email support</li>
+                        <li><span class="check-icon">✓</span> 2-day delivery</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%; display: block; text-align: center;">Get Started</a>
+                </div>
+
+                <div class="glass-card pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(var(--primary) / 0.2), hsl(var(--primary) / 0.05)); font-size: 2rem; margin-bottom: 1.5rem;">🚀</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Standard</h3>
+                    <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin-bottom: 1.5rem;">Ideal for dashboards and automation systems</p>
+                    <div class="price">$500</div>
+                    <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">per project</p>
+                    <ul class="features">
+                        <li><span class="check-icon">✓</span> Advanced VBA automation</li>
+                        <li><span class="check-icon">✓</span> Interactive dashboards</li>
+                        <li><span class="check-icon">✓</span> Power Query integration</li>
+                        <li><span class="check-icon">✓</span> Custom UserForms</li>
+                        <li><span class="check-icon">✓</span> Priority support</li>
+                        <li><span class="check-icon">✓</span> 5-day delivery</li>
+                        <li><span class="check-icon">✓</span> Training included</li>
+                        <li><span class="check-icon">✓</span> 30-day support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%; display: block; text-align: center;">Get Started</a>
+                </div>
+
+                <div class="glass-card pricing-card">
+                    <div class="service-icon" style="background: linear-gradient(135deg, hsl(280 100% 60% / 0.2), hsl(280 100% 60% / 0.05)); font-size: 2rem; margin-bottom: 1.5rem;">👑</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Premium</h3>
+                    <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin-bottom: 1.5rem;">Complete FP&A automation systems</p>
+                    <div class="price">$1500+</div>
+                    <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem;">per project</p>
+                    <ul class="features">
+                        <li><span class="check-icon">✓</span> Full FP&A automation</li>
+                        <li><span class="check-icon">✓</span> Multi-workbook systems</li>
+                        <li><span class="check-icon">✓</span> API integrations</li>
+                        <li><span class="check-icon">✓</span> Database connectivity</li>
+                        <li><span class="check-icon">✓</span> Advanced reporting</li>
+                        <li><span class="check-icon">✓</span> Dedicated support</li>
+                        <li><span class="check-icon">✓</span> Comprehensive training</li>
+                        <li><span class="check-icon">✓</span> 90-day maintenance</li>
+                        <li><span class="check-icon">✓</span> Future enhancements</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%; display: block; text-align: center;">Get Started</a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="color: hsl(var(--muted-foreground));">
+                    Custom packages available for enterprise needs. 
+                    <a href="#contact" style="color: hsl(var(--primary)); font-weight: 600; text-decoration: none;">Contact me</a> 
+                    for a personalized quote.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="badge">Contact</span>
+                <h2>Let's Work <span class="gradient-text">Together</span></h2>
+                <p>Ready to automate your financial processes? Get in touch!</p>
+            </div>
+
+            <div class="contact-form glass-card" style="padding: 3rem;">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid hsl(var(--border)); text-align: center;">
+                    <p style="color: hsl(var(--muted-foreground)); margin-bottom: 1rem;">Or connect with me on:</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center;">
+                        <a href="https://www.fiverr.com/creative_excel2" target="_blank" class="btn btn-primary" style="text-decoration: none;">
+                            Hire on Fiverr
+                        </a>
+                        <a href="https://www.linkedin.com/company/excelsheetflow/" target="_blank" class="btn btn-secondary" style="text-decoration: none;">
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="gradient-text">SUMAIR</h3>
+                    <p style="color: hsl(var(--muted-foreground)); margin-top: 1rem;">
+                        Excel, VBA & FP&A Automation Specialist helping businesses streamline their financial operations.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Excel Automation</a></li>
+                        <li><a href="#services">VBA Development</a></li>
+                        <li><a href="#services">Dashboard Design</a></li>
+                        <li><a href="#services">FP&A Support</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://www.fiverr.com/creative_excel2" target="_blank" class="social-link" title="Fiverr">F</a>
+                        <a href="https://www.linkedin.com/company/excelsheetflow/" target="_blank" class="social-link" title="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sumair. All rights reserved. | Excel, VBA - Macros & FP&A Automation Specialist</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        // Projects data
+        const projects = [
+            {
+                title: "Financial Close Automation Tool",
+                description: "Automated monthly P&L + Variance reporting system",
+                problem: "Manual month-end close process taking 3+ days with high error rates",
+                solution: "Developed comprehensive VBA-based automation tool that consolidates data from multiple sources, generates P&L statements, and produces variance analysis reports automatically",
+                tools: ["Excel VBA", "Power Query", "SQL", "Pivot Tables"],
+                results: "Reduced month-end close time from 3 days to 4 hours (80% time saving). Eliminated manual errors and improved reporting accuracy to 99.9%"
+            },
+            {
+                title: "VBA Data Cleaning Engine",
+                description: "One-click cleanup for 100k+ rows",
+                problem: "Sales team spent 10+ hours weekly cleaning and formatting raw data exports",
+                solution: "Built intelligent VBA macro that automatically identifies and fixes common data quality issues, removes duplicates, standardizes formatting, and validates entries",
+                tools: ["Excel VBA", "Regular Expressions", "Data Validation"],
+                results: "Processing time reduced from 10 hours to 2 minutes per dataset. Enabled real-time data analysis and faster decision-making"
+            },
+            {
+                title: "HR & Payroll Excel System",
+                description: "Attendance + Overtime + Payroll automation",
+                problem: "Manual payroll calculations prone to errors, taking 2 days each pay period",
+                solution: "Created integrated system with automated attendance tracking, overtime calculations, tax deductions, and payslip generation using Excel VBA and UserForms",
+                tools: ["Excel VBA", "UserForms", "Conditional Formatting", "Data Validation"],
+                results: "Payroll processing time cut by 90%. Zero calculation errors in 6+ months of operation. Employee satisfaction increased due to accurate, timely payments"
+            },
+            {
+                title: "E-commerce Sales Dashboard",
+                description: "Shopify/Amazon performance analytics",
+                problem: "No centralized view of multi-channel e-commerce performance metrics",
+                solution: "Designed interactive Excel dashboard pulling data from multiple platforms, featuring real-time KPIs, trend analysis, and automated alerts for critical metrics",
+                tools: ["Power Query", "Power Pivot", "DAX", "Advanced Charts"],
+                results: "Management gained real-time visibility into all sales channels. Identified underperforming products, leading to 25% inventory optimization"
+            },
+            {
+                title: "Budget & Forecasting Template",
+                description: "FP&A based planning model",
+                problem: "Annual budgeting process was manual, inflexible, and time-consuming",
+                solution: "Developed dynamic forecasting template with scenario planning, rolling forecasts, variance analysis, and automated consolidation across departments",
+                tools: ["Excel Financial Modeling", "Power Query", "Macros", "Data Validation"],
+                results: "Budget cycle time reduced from 6 weeks to 2 weeks. Enabled monthly rolling forecasts and improved forecast accuracy by 40%"
+            },
+            {
+                title: "Multi-file Consolidation Tool",
+                description: "One-click data merge across workbooks",
+                problem: "Finance team manually consolidated 50+ Excel files monthly, taking 8+ hours",
+                solution: "Created VBA tool that automatically imports, validates, and consolidates data from multiple workbooks with error checking and exception reporting",
+                tools: ["Excel VBA", "File I/O", "Error Handling", "Logging"],
+                results: "Consolidation time reduced from 8 hours to 5 minutes. Eliminated version control issues and improved data accuracy"
+            },
+            {
+                title: "Inventory Management System",
+                description: "Real-time stock tracking and reorder automation",
+                problem: "Manual inventory tracking led to stockouts and overstocking issues",
+                solution: "Built automated inventory management system with real-time stock levels, automatic reorder point calculations, and supplier integration",
+                tools: ["Excel VBA", "Power Query", "API Integration", "Conditional Formatting"],
+                results: "Stockouts reduced by 30%. Carrying costs decreased by 20%. Automated reordering saved 15 hours weekly"
+            },
+            {
+                title: "Sales Commission Calculator",
+                description: "Automated commission tracking and reporting",
+                problem: "Complex commission structures led to disputes and delayed payments",
+                solution: "Developed transparent commission calculation system with multiple tier support, automated reconciliation, and detailed reporting",
+                tools: ["Excel VBA", "Advanced Formulas", "Data Tables", "Pivot Reports"],
+                results: "Commission disputes eliminated. Payment processing time reduced by 75%. Sales team satisfaction increased significantly"
+            },
+            {
+                title: "Cash Flow Forecasting Model",
+                description: "13-week rolling cash flow projection",
+                problem: "Limited visibility into future cash positions risked liquidity issues",
+                solution: "Created dynamic 13-week rolling forecast model with scenario analysis, automatic updates from accounting system, and alert mechanisms",
+                tools: ["Financial Modeling", "Power Query", "Excel VBA", "Conditional Logic"],
+                results: "Prevented potential cash shortfall. Improved cash management efficiency. Enabled proactive financing decisions"
+            },
+            {
+                title: "Project Profitability Tracker",
+                description: "Real-time project margin analysis",
+                problem: "Project managers lacked real-time visibility into project profitability",
+                solution: "Built comprehensive tracking system showing real-time margins, resource allocation, budget vs. actuals, and profitability forecasts",
+                tools: ["Excel VBA", "Power Pivot", "Dashboard Design", "KPI Metrics"],
+                results: "Identified underperforming projects 40% faster. Improved overall project margins by 15% through better resource allocation"
+            },
+            {
+                title: "Expense Management Portal",
+                description: "Employee expense submission and approval workflow",
+                problem: "Paper-based expense reporting was slow and difficult to track",
+                solution: "Created Excel-based expense management system with UserForms for submission, automated approval routing, and policy compliance checks",
+                tools: ["Excel VBA", "UserForms", "Workflow Automation", "Email Integration"],
+                results: "Expense processing time reduced by 60%. Policy violations decreased by 85%. Improved reimbursement turnaround time"
+            },
+            {
+                title: "Customer Analytics Dashboard",
+                description: "Customer segmentation and lifetime value analysis",
+                problem: "Marketing team lacked insights into customer behavior and value",
+                solution: "Developed analytics dashboard with customer segmentation, CLV calculations, cohort analysis, and automated reporting",
+                tools: ["Power Query", "Power Pivot", "Advanced Analytics", "Data Visualization"],
+                results: "Enabled data-driven marketing decisions. Identified high-value customer segments. Improved marketing ROI by 35%"
+            }
+        ];
+
+        // Render projects
+        const projectsGrid = document.getElementById('projectsGrid');
+        projects.forEach((project, index) => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'glass-card project-card';
+            projectCard.innerHTML = `
+                <h3>${project.title}</h3>
+                <p style="color: hsl(var(--muted-foreground)); font-size: 0.875rem; margin: 0.5rem 0;">${project.description}</p>
+                <div class="project-tools">
+                    ${project.tools.map(tool => `<span class="tool-badge">${tool}</span>`).join('')}
+                </div>
+            `;
+            projectCard.addEventListener('click', () => openModal(project));
+            projectsGrid.appendChild(projectCard);
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('projectModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalBody = document.getElementById('modalBody');
+
+        function openModal(project) {
+            modalBody.innerHTML = `
+                <h2 style="margin-bottom: 1.5rem;">${project.title}</h2>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: hsl(var(--primary)); margin-bottom: 0.5rem;">Problem</h3>
+                    <p style="color: hsl(var(--muted-foreground)); line-height: 1.6;">${project.problem}</p>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: hsl(var(--primary)); margin-bottom: 0.5rem;">Solution</h3>
+                    <p style="color: hsl(var(--muted-foreground)); line-height: 1.6;">${project.solution}</p>
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <h3 style="color: hsl(var(--primary)); margin-bottom: 0.5rem;">Tools Used</h3>
+                    <div class="project-tools">
+                        ${project.tools.map(tool => `<span class="tool-badge">${tool}</span>`).join('')}
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="color: hsl(var(--primary)); margin-bottom: 0.5rem;">Results</h3>
+                    <p style="color: hsl(var(--muted-foreground)); line-height: 1.6;">${project.results}</p>
+                </div>
+            `;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Contact form
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Fade in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
